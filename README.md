@@ -1,8 +1,10 @@
 # Particle rescaling
 
-This code carries out the Angulo & White (2010; http://arxiv.org/abs/0912.4277) rescaling algorithm on n-body dark matter particles.
+This code carries out the Angulo & White (2010; http://arxiv.org/abs/0912.4277) rescaling algorithm on n-body dark matter particles. It uses the FFTW libraries, which need to be linked with the compile command. I use
 
-The code should compile with any Fotran compiler. You will need to edit the FFTW library location in the first few lines for your machine.
+gfortran modpart.f90 -L/usr/local/lib -lfftw3
+
+and I think the code should compile with any Fortran compiler, but you may need to edit the FFTW library location in the first few lines of modpart.f90 to be appropriate for your machine.
 
 The code needs to be run with an 'ini' parameters file. Two examples are given: 'example_zs.ini', which only carries out the redshift and size scaling parts of the method, and 'example_zsd.ini', which also does the displacement field correction.
 
